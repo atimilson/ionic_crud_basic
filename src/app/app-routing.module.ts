@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'add-produto',
+    loadChildren: () => import('./add-produto/add-produto.module').then( m => m.AddProdutoPageModule)
+  },
+  {
+    path: 'adit-produto/:id',
+    loadChildren: () => import('./adit-produto/adit-produto.module').then( m => m.AditProdutoPageModule)
+  },
 ];
 
 @NgModule({
