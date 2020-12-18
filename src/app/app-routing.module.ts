@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'adit-produto/:id',
     loadChildren: () => import('./adit-produto/adit-produto.module').then( m => m.AditProdutoPageModule)
   },
+  {
+    path: 'list-produtos',
+    loadChildren: () => import('./list-produtos/list-produtos.module').then( m => m.ListProdutosPageModule)
+  },
 ];
 
 @NgModule({

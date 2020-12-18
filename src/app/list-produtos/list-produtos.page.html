@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color='danger'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>      
+    </ion-buttons>  
+    <ion-title>Lista Produtos</ion-title>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Produto</ion-label>
+    <ion-input type="text" [(ngModel)]="id_produto"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="consultarCep()">Consultar</ion-button>
+  <ion-item>    
+    {{id_produto}}
+  </ion-item>  
+</ion-content>
