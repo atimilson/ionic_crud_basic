@@ -13,7 +13,26 @@
     <ion-input type="text" [(ngModel)]="id_produto"></ion-input>
   </ion-item>
   <ion-button expand="block" color="primary" (click)="consultarCep()">Consultar</ion-button>
-  <ion-item>    
-    {{id_produto}}
-  </ion-item>  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm *ngFor="let item of this.resultado.dados">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Produto</ion-card-subtitle>
+            <ion-card-title>{{item.descricao}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-item>
+              <ion-label>{{item.id}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{item.cor}}</ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+  
 </ion-content>

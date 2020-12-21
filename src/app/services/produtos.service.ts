@@ -13,8 +13,11 @@ export class ProdutosService {
 
   constructor(private http: HttpClient) { }
   
-  getProdutos(){
+  getProdutos(id = ''){
     let url = 'http://localhost/treimentoPHP/produto/mostrar';
+    if (id != ''){
+      url = url + '/'+id;
+    }
     return this.http.get(url)
       .toPromise();
   }
