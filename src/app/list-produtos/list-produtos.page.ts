@@ -8,6 +8,8 @@ import { ProdutosService } from '../services/produtos.service';
 })
 export class ListProdutosPage implements OnInit {
   id_produto = '1'
+
+
   constructor(private produtoService:ProdutosService) { }
 
   ngOnInit() {
