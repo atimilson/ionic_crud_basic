@@ -14,7 +14,7 @@ export class ProdutosService {
   constructor(private http: HttpClient) { }
   
   getProdutos(id = ''){
-    let url = 'http://localhost/treimentoPHP/produto/mostrar';
+    let url = 'http://atimilson10.000webhostapp.com/treimentoPHP/PRODUTO/mostrar';
     if (id != ''){
       url = url + '/'+id;
     }
