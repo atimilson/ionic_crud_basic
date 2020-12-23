@@ -14,7 +14,7 @@ export class ProdutosService {
   constructor(private http: HttpClient) { }
   
   getProdutos(id = ''){
-    let url = 'http://atimilson10.000webhostapp.com/treimentoPHP/PRODUTO/mostrar';
+    let url = 'http://manoel2100.com.br/api/PRODUTO/mostrar';
     if (id != ''){
       url = url + '/'+id;
     }
