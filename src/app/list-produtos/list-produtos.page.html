@@ -8,14 +8,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="stacked">Produto</ion-label>
-    <ion-input type="text" [(ngModel)]="id_produto"></ion-input>
-  </ion-item>
+  <ion-list lines="none">
+      <ion-item>
+        <ion-button position="right" shape="round" fill="outline" (click)="testemodal()">Adicionar</ion-button>
+      </ion-item>
+      <ion-item>    
+        <ion-label position="stacked">Produto</ion-label>
+        <ion-input type="text" [(ngModel)]="id_produto"></ion-input>
+      </ion-item>
+  </ion-list>
+  
   <ion-button expand="block" color="primary" (click)="consultarCep()">Consultar</ion-button>
   <ion-grid>
     <ion-row>
-      <ion-col size="12" size-sm *ngFor="let item of this.resultado.dados">
+      <ion-col size="6" size-lg *ngFor="let item of this.resultado.dados">
         <ion-card>
           <ion-card-header>
             <ion-card-subtitle>Produto</ion-card-subtitle>
@@ -30,6 +36,12 @@
               <ion-label>{{item.cor}}</ion-label>
             </ion-item>
           </ion-card-content>
+          <ion-button color="danger">
+             <ion-icon name="close-circle"></ion-icon>
+          </ion-button>
+          <ion-button color="warning">
+            <ion-icon name="pencil"></ion-icon>
+         </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
