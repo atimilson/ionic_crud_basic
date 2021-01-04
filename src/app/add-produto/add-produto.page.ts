@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-produto',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProdutoPage implements OnInit {
 
-  constructor() { }
+  constructor( public modalC :ModalController) { }
 
   ngOnInit() {
+  }
+ 
+  closeModal(){
+    this.modalC.dismiss();
   }
 
 }

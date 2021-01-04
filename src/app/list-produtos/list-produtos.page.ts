@@ -33,4 +33,5 @@ export class ListProdutosPage implements OnInit {
     });
     return await modal.present();
   }
+  
 }

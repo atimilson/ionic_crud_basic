@@ -8,16 +8,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-list lines="none">
-      <ion-item>
-        <ion-button position="right" shape="round" fill="outline" (click)="testemodal()">Adicionar</ion-button>
-      </ion-item>
-      <ion-item>    
-        <ion-label position="stacked">Produto</ion-label>
-        <ion-input type="text" [(ngModel)]="id_produto"></ion-input>
-      </ion-item>
-  </ion-list>
-  
+  <ion-grid>
+    <ion-row>
+       <ion-col>
+         <ion-item>
+           <ion-label position="stacked">Produto</ion-label>
+           <ion-input type="text" [(ngModel)]="id_produto"></ion-input>
+         </ion-item>
+       </ion-col>
+       <ion-col>
+         <ion-button position="right" shape="round" fill="outline" (click)="testemodal()">Adicionar</ion-button>
+       </ion-col>
+    </ion-row>
+  </ion-grid>  
   <ion-button expand="block" color="primary" (click)="consultarCep()">Consultar</ion-button>
   <ion-grid>
     <ion-row>
