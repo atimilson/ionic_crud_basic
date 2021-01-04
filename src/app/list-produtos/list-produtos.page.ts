@@ -9,7 +9,7 @@ import { AddProdutoPage } from '../add-produto/add-produto.page';
   styleUrls: ['./list-produtos.page.scss'],
 })
 export class ListProdutosPage implements OnInit {
-  id_produto = '1';
+  id_produto = '';
  // dados : any = {id :'', descricao: '',cor:'',data_inclusao:''}
   resultado : any = {status:'',dados : [{id:'', descricao:'',cor:'',data_inclusao:''}]};
 

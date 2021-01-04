@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color='success'>
+  <ion-toolbar color='tertiary'>
     <ion-buttons slot="start">
       <ion-button color="dark" (click)="closeModal()">
         <ion-icon name="arrow-back"></ion-icon>
@@ -10,5 +10,13 @@
 </ion-header>
 
 <ion-content>
-  <p>tess</p>
+  <ion-item>
+    <ion-label position="stacked">Descricao</ion-label>
+    <ion-input type="text" [(ngModel)]="descricao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Cor</ion-label>
+    <ion-input type="text" [(ngModel)]="cor"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="postProduto()">Cadastrar</ion-button>
 </ion-content>
