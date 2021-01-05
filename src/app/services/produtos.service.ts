@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +31,21 @@ export class ProdutosService {
         cor : cor
       }    
     });
-    console.log(params);
     return this.http.post(url,params, {headers: this.httpHeader.headers})
+    .toPromise();
+  }
+
+  putProduto(produto: any){
+    let url = 'http://manoel2100.com.br/api/produto/inserir';
+    //console.log(produto);
+    const params = new HttpParams({
+      fromObject:{
+        id : produto.id,
+        descricao : produto.descricao,
+        cor : produto.cor
+      }    
+    });
+    return this.http.put(url,params, {headers: this.httpHeader.headers})
     .toPromise();
   }
 
@@ -47,7 +60,7 @@ export class ProdutosService {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }), 
       body : params
     };    
-    return this.http.delete(url,httpOptions).toPromise();
+    return this.http.options(url,httpOptions).toPromise();
   }
 
 }

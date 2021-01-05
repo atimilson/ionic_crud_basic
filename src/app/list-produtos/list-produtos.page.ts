@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../services/produtos.service';
 import { ModalController, ToastController } from '@ionic/angular';
 import { AddProdutoPage } from '../add-produto/add-produto.page';
+import { AditProdutoPage } from '../adit-produto/adit-produto.page';
 
 @Component({
   selector: 'app-list-produtos',
@@ -18,6 +19,9 @@ export class ListProdutosPage implements OnInit {
               public  toastController : ToastController) { }
 
   ngOnInit() {
+    this.produtoService.getProdutos('').then((json)=>{
+      this.resultado = json;
+    })
   }
 
   async mensagens(texto) {
@@ -29,18 +33,29 @@ export class ListProdutosPage implements OnInit {
     toast.present();
   }
 
-  consultarCep(){
-    this.produtoService.getProdutos(this.id_produto)
+   consultarProduto(){
+      this.produtoService.getProdutos(this.id_produto)
       .then((json)=>{
         this.resultado = json;
         console.log(this.resultado.dados[0].id)
       })
-      .catch()
+      .catch((json)=>{
+          this.mensagens('Sem Produtos...')
+      })
   }
-  async testemodal(){
+  async addModal(){
     const modal = await this.modalC.create({
       component : AddProdutoPage,
       cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
+
+  async editModal(item){
+    const modal = await this.modalC.create({
+      component : AditProdutoPage,     
+      cssClass: 'my-custom-class',
+      componentProps : {produto : item}  
     });
     return await modal.present();
   }
@@ -49,7 +64,7 @@ export class ListProdutosPage implements OnInit {
     console.log(dados.id);
 
     this.produtoService.deleteProduto(dados.id).then((response : any)=>{
-      this.resultado = JSON.stringify(response);
+      this.consultarProduto();
       this.mensagens('Produto deletado');
   })
   .catch((response)=>{

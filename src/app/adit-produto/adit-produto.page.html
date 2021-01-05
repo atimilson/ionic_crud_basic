@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>adit-produto</ion-title>
-  </ion-toolbar>
+  <ion-toolbar color='segundary'>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>      
+    </ion-buttons>  
+    <ion-title>Editar Produto</ion-title>
+  </ion-toolbar>  
 </ion-header>
 
 <ion-content>
-
+  <ion-item>
+    <ion-label position="stacked">id</ion-label>
+    <ion-input type="text" disabled="true" [(ngModel)]="prod.id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Descricao</ion-label>
+    <ion-input type="text" [(ngModel)]="prod.descricao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Cor</ion-label>
+    <ion-input type="text" [(ngModel)]="prod.cor"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="putProduto()">Alterar</ion-button>
 </ion-content>

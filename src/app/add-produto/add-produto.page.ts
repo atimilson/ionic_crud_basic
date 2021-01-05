@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController, NavController, ToastController  } from '@ionic/angular';
 import { ListProdutosPage } from '../list-produtos/list-produtos.page';
 import { ProdutosService } from '../services/produtos.service';
 
@@ -17,13 +17,16 @@ export class AddProdutoPage implements OnInit {
 
   constructor( public modalC :ModalController,
              private produtoService:ProdutosService,
-             public toastController: ToastController) { }
+             public toastController: ToastController,
+             public navCtrl: NavController) { }
 
   ngOnInit() {
   }
  
   closeModal(){
-    this.modalC.dismiss();
+    return this.modalC.dismiss({
+      data: true
+    });
   }
 
   async mensagens(texto) {
