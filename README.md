@@ -1,5 +1,5 @@
 Projeto Ionic basico para aprendizado de crud  
-Utilizando API PHP https://github.com/atimilson/API_php_pure
+Utilizando API PHP https://github.com/atimilson/API_php_pure  
 passando o Content-Type = application/x-www-form-urlencoded
 
 <h1>Telas</h1>
