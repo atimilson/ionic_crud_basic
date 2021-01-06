@@ -57,7 +57,7 @@ export class ProdutosService {
       } 
     });   
     let httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }), 
+      headers: this.httpHeader.headers, 
       body : params
     };    
     return this.http.options(url,httpOptions).toPromise();
